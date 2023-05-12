@@ -8,7 +8,7 @@ stop: ## Stop the application
 	pgrep awesome-api | xargs kill
 
 clean: ## Stop the application. Delete the binary awesome-api and the log file awesome-api.log
-	make stop && rm awesome-api.log && rm awesome-api
+	rm awesome-api.log && rm awesome-api && make stop
 
 test: test the server in local
 	curl http://localhost:9999/health && curl http://localhost:9999
