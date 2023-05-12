@@ -1,5 +1,5 @@
 build: ## compile the source code of the application to a binary
-	go build
+	make lint && go build
 
 run: ## Run the application in background by executing the binary and write logs into a file
 	./awesome-api > ./awesome-api.log 2>&1 &
