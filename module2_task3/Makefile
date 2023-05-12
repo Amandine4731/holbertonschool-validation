@@ -10,7 +10,7 @@ stop: ## Stop the application
 clean: ## Stop the application. Delete the binary awesome-api and the log file awesome-api.log
 	-make stop
 	-rm awesome-api.log && rm awesome-api
-	-rm coverage-integration.out
+	-rm coverage-units.out && coverage-integrations.out
 
 test: ## test the server in local
 	curl http://localhost:9999/health && curl http://localhost:9999
