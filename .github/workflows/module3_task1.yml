@@ -12,5 +12,20 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Run Make Help
-        run: cd module3_task0 && make build
+      - name: Run Make Build
+        run: cd module3_task1 && make build
+
+      - name: Run Setup
+        run: chmod +x setup.sh && ./setup.sh
+
+      - name: Run the application
+        run: make run
+
+      - name: Create a new blog post
+        run: make post
+
+      - name: Stop the application
+        run: make stop
+
+      - name: Clean
+        run: make clean

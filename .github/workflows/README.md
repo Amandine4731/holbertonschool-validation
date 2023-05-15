@@ -1,5 +1,5 @@
 # Workflow
-The **module3_task0** workflow is a GitHub Actions workflow that automates the validation of our website's codebase. This workflow is triggered on a daily basis, as well as whenever there is a new code push to the main branch of the repository.
+The **module3_task** workflow is a GitHub Actions workflow that automates the validation of our website's codebase. This workflow is triggered on a daily basis, as well as whenever there is a new code push to the main branch of the repository.
 
 The workflow consists of three steps:
 
