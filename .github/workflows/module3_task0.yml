@@ -1,20 +1,17 @@
+---
 name: module3_task0
 
-on:
+"on":
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  schedule:
+    - cron: "5 6 * * *"
 
 jobs:
   build:
     runs-on: ubuntu-22.04
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Validate Makefile
-      run: |
-        cd module3_task0
-        make help
+      - name: Run Make Help
+        run: cd module3_task0 && make help
