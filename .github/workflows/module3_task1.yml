@@ -1,32 +1,36 @@
 ---
-name: module3_task0
+name: module3_task1
 
 "on":
   push:
   schedule:
-    - cron: "5 6 * * *"
+    - cron: "30 10 * * *"
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout Repository
+      - name: Clone the repo
         uses: actions/checkout@v3
+        with:
+          repository: ''
 
-      - name: Run Setup
+      - name: Running the setup
         run: ./module3_task1/setup.sh
 
-      - name: Run Make Build
-        run: cd module3_task1/ && make build && make lint
+      - name: Building
+        run: cd module3_task1/ && make build
 
-      - name: Run the application
+      - name: Run api
         run: cd module3_task1/ && make run
 
-      - name: Create a new blog post
-        run: cd module3_task1/ && make post
+      - name: Create a test post
+        run: |
+          cd module3_task1/ &&
+          POST_TITLE=welcometest POST_NAME=testing make post
 
-      - name: Stop the application
-        run: cd module3_task1/ && make stop
+      - name: Testing
+        run: cd module3_task1/ && make test
 
-      - name: Clean
+      - name: Cleaning
         run: cd module3_task1/ && make clean
